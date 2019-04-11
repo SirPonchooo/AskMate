@@ -38,6 +38,5 @@ def display_list_of_questions():
     return render_template('list.html', questions=list_of_questions)
 
 
-
 if __name__ == '__main__':
     app.run(debug=True)
