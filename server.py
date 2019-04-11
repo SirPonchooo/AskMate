@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 import connection
 import csv
+import data_manager
 
 app = Flask(__name__)
 
@@ -31,5 +32,11 @@ def add_question():
     return render_template('add-question.html')
 
 
+@app.route('/list', methods=['GET', 'POST'])
+def display_list_of_questions():
+    list_of_questions = data_manager.get_questions()
+    return render_template('list.html', questions=list_of_questions)
+
+
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
