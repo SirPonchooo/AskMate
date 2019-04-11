@@ -1,10 +1,30 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>list</title>
 </head>
 <body>
-$END$
+<h1>Questions</h1>
+<table>
+    <tr>
+        <td> id </td>
+        <td> submission_time </td>
+        <td> view_number </td>
+        <td> vote_number </td>
+        <td> title </td>
+        <td> message </td>
+        <td> image </td>
+    </tr>
+    {% for question in questions %}
+        <tr>
+        {% for key, value in question.items() %}
+            <td>{{value}}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
 </body>
 </html>
